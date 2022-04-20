@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# EngagingImageGenerator
+This is an application that helps users to seamlessly create and generate engaging images in a fun and creative way  [engaging-image-generator](https://engaging-post-image-generator.herokuapp.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Important Technologies Utilized
 
-### `npm start`
+* React (17.0.2)
+* Material Ui (5.2.5)
+* Heroku 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<!-- ## Images
+### Register
+Visit [xplusportfolio.tech](https://www.xplusportfolio.tech), to sign up and create an account. confirm your account on email and login.
+![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1648905990/git_homepage/ezgif.com-gif-maker_12_lb3to1.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Start Exploring
+### Add your existing projects.
+Add any of your existing live projects you have worked on. Ensure that project is live and the repo is public
+![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1648906545/git_homepage/ezgif.com-gif-maker_13_m3kcsj.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Have any new project you are working on ?
+Tell the others what you are working on by creating an anticipation and setting a deadline to complete the project.
+![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1648907542/git_homepage/ezgif.com-gif-maker_14_kylzjr.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Project Review
+Review projects by using the project review tool
+![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1648909249/git_homepage/ezgif.com-gif-maker_15_prhamf.gif)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Utilize Project Review tool
+Give feedbacks on project by making suggestions, adding notes and drawing out bugs by uploading screenshots.
+![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1648909787/git_homepage/ezgif.com-gif-maker_16_on7ytj.gif)
+ -->
