@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import EditMenu from '../edit_entity/EditMenu';
 import DeleteEntity from '../DeleteEntity';
+import RectEditor from './editor/RectEditor';
+import { Paper } from '@mui/material';
 
 export default function RectangleEntity({width, height, entity}) {
   const [open, setOpen] = React.useState(false);
@@ -27,13 +29,13 @@ export default function RectangleEntity({width, height, entity}) {
           <Box position='fixed' right={0} left={0} display='flex' justifyContent='space-between' top={-45}>
             
             <DeleteEntity id={id} />
-            <EditMenu />
+            <EditMenu editor={<RectEditor entity={entity} />}/>
           </Box>
         ) : null}
-         <Box           
-         style={{backgroundColor: "green"}} width={width} sx={{bgColor: "blue", border: open ? "1px solid grey" : null}} onClick={handleClick} height={height} >
+        
+        <Paper style={{backgroundColor: entity.backgroundColor}} elevation={entity.elevation} onClick={handleClick} sx={{bgcolor: 'grey', height: height, width: width, border: open ? "2px solid dodgerBlue" : null, borderRadius: `${entity.borderRadius}px`}}   >
             
-        </Box>
+          </Paper>
       </Box>
     </ClickAwayListener>
   );

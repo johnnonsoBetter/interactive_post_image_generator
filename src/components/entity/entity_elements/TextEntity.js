@@ -37,14 +37,14 @@ export default function TextEntity({entity, width, height}) {
                 <EditMenu editor={<TextEditor entity={entity} />} />
                 </Box>
             ) : null}
-             <Box width={width}  sx={{border: open ? "1px solid grey": ''}} onClick={handleClick} height={height} onDoubleClick={() => {
+             <Box width={width} height={height} overflow='hidden'  sx={{border: open ? "1px solid grey": ''}} onClick={handleClick}  onDoubleClick={() => {
 
              }} >
 
                 {
                     openEditText ?
                     <TextField autoFocus fullWidth value={text} onChange={(e) => setText(e.target.value)} /> :
-                    <Typography overflow='hidden' sx={{textAlign: entity.textAlign, fontWeight, fontSize: `${entity.fontSize}px`, color: entity.color, fontFamily: entity.fontFamily}}fontWeight={fontWeight} onDoubleClick={() => setOpenEditText(openEditText => !openEditText)} > {text} </Typography>
+                    <Typography  overflow='hidden' sx={{textAlign: entity.textAlign, fontWeight, fontSize: `${entity.fontSize}px`, color: entity.color, fontFamily: entity.fontFamily}}fontWeight={fontWeight} onDoubleClick={() => setOpenEditText(openEditText => !openEditText)} > {text} </Typography>
 
                 }
                

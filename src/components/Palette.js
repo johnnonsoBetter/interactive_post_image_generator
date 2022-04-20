@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { AddPhotoAlternateRounded, DesignServicesRounded, RectangleRounded, TextIncreaseRounded, WidgetsRounded } from '@mui/icons-material'
+import { AddPhotoAlternateRounded, CloudDownloadOutlined, DesignServicesRounded, RectangleRounded, TextIncreaseRounded, WidgetsRounded } from '@mui/icons-material'
 import { Button, Container, IconButton, Paper, Tooltip, Zoom } from '@mui/material'
 import { Box } from '@mui/system'
 import { v4 as uuidv4 } from 'uuid';
@@ -61,10 +61,11 @@ export default function Palette() {
             height: 220,
             width: 220,
             type: 'rect',
-            borderRadius: '',
+            elevation: 0,
+            borderRadius: 0,
             borderColor: '',
             borderSize: '',
-            backgroundColor: 'grey'
+            backgroundColor: '#222d39'
         }))
         else if(type === 'text')
           setEntities(entities.concat({
@@ -120,7 +121,7 @@ export default function Palette() {
 
                     <Box display='flex' alignItems='center' justifyContent='space-around' my={1} >
 
-                        <Button size='small' sx={{height: 25}} variant='contained' >
+                        <Button size='small' endIcon={<CloudDownloadOutlined /> } sx={{height: 25, mr: 1}} variant='contained' >
                           Export 
                         </Button>
                         <Tooltip title='Text'  >
@@ -130,6 +131,8 @@ export default function Palette() {
 
                         </Tooltip>
 
+                        
+
                         <Tooltip title='Image' >
                             <IconButton onClick={() => {
                               const file = fileRef.current 
@@ -137,6 +140,13 @@ export default function Palette() {
                               file.click()
                             }}  >
                                 <AddPhotoAlternateRounded />
+                            </IconButton>
+
+                        </Tooltip>
+
+                        <Tooltip title='Rect'  >
+                            <IconButton onClick={() => addEntity('rect')} >
+                                <RectangleRounded />
                             </IconButton>
 
                         </Tooltip>

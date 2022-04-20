@@ -24,16 +24,12 @@ const theme = createTheme({
 const sprites = [
   {
     id: uuidv4(),
-    imgUrl: 'https://o.remove.bg/downloads/ec5584cc-e4c9-41d3-b4da-c340d8c8e395/image-removebg-preview.png'
+    imgUrl: 'https://res.cloudinary.com/dn6vnxbnm/image/upload/c_fit,q_100,w_200/v1650440985/sprites/cartoon-smiling-female-teacher-with-pointer-vector-14071505-removebg-preview_fefxlw.png'
   },
   {
     id: uuidv4(),
-    imgUrl: 'https://o.remove.bg/downloads/12845397-8f83-496f-a980-6f67066d2eb3/image-removebg-preview.png'
+    imgUrl: 'https://res.cloudinary.com/dn6vnxbnm/image/upload/c_fit,q_100,w_200/v1650440198/sprites/cute-teacher-cartoon-holding-a-pointer-vector-11141472-removebg-preview_g80hhq.png'
   },
-  {
-    id: uuidv4(),
-    imgUrl: 'https://o.remove.bg/downloads/340a3c72-7a4e-4579-a7e2-51764f2835b0/image-removebg-preview.png'
-  }
 ]
 
 function App() {

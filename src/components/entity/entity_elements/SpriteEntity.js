@@ -46,7 +46,7 @@ export default function SpriteEntity({entity, width, height}) {
                     </Box>
                 ) : null}
                  <Box onClick={handleClick} sx={{border: open ? "2px solid dodgerBlue" : null, borderRadius: '10px'}}  height={height}  width={width} >
-                    <img height={height}  width={width} src={src} style={{maxWidth: "100%"}} />
+                    <img height={height}  width={width} src={src} style={{maxWidth: "80%", objectFit: 'scale-down', objectPosition: 'center'}} />
                 </Box>
                 </Box>
             </ClickAwayListener>
