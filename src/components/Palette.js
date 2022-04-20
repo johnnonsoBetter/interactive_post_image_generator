@@ -46,8 +46,6 @@ export default function Palette() {
         const base64image = canvas.toDataURL("image/png");
         saveAs(base64image, 'images.png')
         
-
-        
       });
 
 
