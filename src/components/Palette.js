@@ -242,7 +242,7 @@ function ColorPicker({backgroundColor, setBackgroundColor}) {
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip title='background color' >
+        <Tooltip title='palette background' >
             <IconButton size='small' onClick={handleClick} >
                 <DesignServicesRounded />
             </IconButton>
