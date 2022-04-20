@@ -1,6 +1,7 @@
 import { List, ListItemText, ListItem, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react' 
+import Overlap from './Overlap'
 import FontFamily from './text_editor/FontFamily'
 import FontSize from './text_editor/FontSize'
 import FontWeight from './text_editor/FontWeight'
@@ -14,16 +15,36 @@ export default function TextEditor({entity}) {
     return (
         <List >
              <ListItem >
-                <Box display='flex' alignItems='center' width="100%"  justifyContent='flex-end' >
-                   
-                    <Box >
-                        <TextColor entity={entity} />
-                    </Box>
+                <Box display='flex' alignItems='center' width="100%"  justifyContent='space-between' >
+                    <ListItemText  > 
+                        <Typography variant='body2' > Overlap</Typography>
+                    </ListItemText>
 
                     <Box >
-                        <FontWeight entity={entity} />
+                        <Overlap entity={entity} />
                     </Box>
                 </Box>
+            </ListItem>
+
+             <ListItem >
+                <Box display='flex' alignItems='center' width="100%"  justifyContent='space-between' >
+                    <ListItemText  > 
+                        <Typography variant='body2' > Color/Typeface</Typography>
+                    </ListItemText>
+
+                    <Box display='flex' alignItems='center' width="100%"  justifyContent='flex-end' >
+                   
+                    <Box >
+                            <TextColor entity={entity} />
+                        </Box>
+
+                        <Box >
+                            <FontWeight entity={entity} />
+                        </Box>
+                    </Box>
+                </Box>
+
+                
             </ListItem>
 
 

@@ -13,7 +13,7 @@ export default function NoDesign() {
     return (
         <Box width='100%'>
             <Box width='100%' display='flex' justifyContent='center' >
-                <Typography  textAlign='center' fontWeight={700}  color="initial"> Start Making Interactive Post Designs!</Typography>
+                <Typography  textAlign='center' fontWeight={700}  color="initial"> Start Making Interactive Post Designs Images!</Typography>
             </Box>
 
             <Box width='100%' display='flex' justifyContent='center' >

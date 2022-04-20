@@ -3,6 +3,7 @@ import { Box } from '@mui/system'
 import React from 'react' 
 import BorderRadius from './img_editor/BorderRadius'
 import Elevation from './img_editor/Elevation'
+import Overlap from './Overlap'
 import BackgroundColor from './rect_editor/BackgroundColor'
 
 
@@ -12,6 +13,18 @@ export default function RectEditor({entity}) {
 
     return (
         <List >
+
+            <ListItem >
+                <Box display='flex' alignItems='center' width="100%"  justifyContent='space-between' >
+                    <ListItemText  > 
+                        <Typography variant='body2' > Overlap</Typography>
+                    </ListItemText>
+
+                    <Box >
+                        <Overlap entity={entity} />
+                    </Box>
+                </Box>
+            </ListItem>
              
              <ListItem >
                 <Box display='flex' alignItems='center' width="100%"  justifyContent='space-between' >

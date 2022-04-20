@@ -7,12 +7,34 @@ import DeleteEntity from '../DeleteEntity';
 import EditMenu from '../edit_entity/EditMenu';
 import TextEditor from './editor/TextEditor';
 
+import { alpha, styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
+
+const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  'label + &': {
+    marginTop: theme.spacing(3),
+  },
+  '& .MuiInputBase-input': {
+   
+    position: 'relative',
+    
+    border: '0px solid #ced4da',
+   
+  },
+}));
+
+
+
+
 export default function TextEntity({entity, width, height}) {
 
     const [open, setOpen] = React.useState(false);
     const {id, fontSize, fontWeight} = entity
     const [openEditText, setOpenEditText] = useState(false)
-    const [text, setText] = useState("Double to type something cool!")
+    const [text, setText] = useState("Double tap to type something cool!")
 
     const handleClick = () => {
         setOpen((prev) => !prev);
@@ -43,10 +65,11 @@ export default function TextEntity({entity, width, height}) {
 
                 {
                     openEditText ?
-                    <TextField autoFocus fullWidth value={text} onChange={(e) => setText(e.target.value)} /> :
+                        <BootstrapInput multiline  autoFocus  sx={{width: "100%", height, textAlign: entity.textAlign, fontWeight, fontSize: `${entity.fontSize}px`, color: entity.color, fontFamily: entity.fontFamily}} value={text} onChange={(e) => setText(e.target.value)} /> :
                     <Typography  overflow='hidden' sx={{textAlign: entity.textAlign, fontWeight, fontSize: `${entity.fontSize}px`, color: entity.color, fontFamily: entity.fontFamily}}fontWeight={fontWeight} onDoubleClick={() => setOpenEditText(openEditText => !openEditText)} > {text} </Typography>
 
                 }
+
                
              </Box>
             </Box>

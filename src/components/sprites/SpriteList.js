@@ -7,7 +7,9 @@ export default function SpriteList() {
 
 
 
-    const {sprites, currentSpriteId, setCurrentSpriteId} = useContext(PostDesignContext)
+    const {sprites, currentSpriteId, setCurrentSpriteId, setOpen} = useContext(PostDesignContext)
+
+    
 
 
     return (
@@ -17,7 +19,10 @@ export default function SpriteList() {
 
                     return (
                         <ListItem key={sprite.id + index} >
-                            <ButtonBase onClick={()=> setCurrentSpriteId(sprite.id)} sx={{p: 1, borderRadius: "10px", border: currentSpriteId === sprite.id && "2px solid dodgerBlue"}}  >
+                            <ButtonBase onClick={()=> {
+                                setCurrentSpriteId(sprite.id)
+                                setOpen()
+                            }} sx={{p: 1, borderRadius: "10px", border: currentSpriteId === sprite.id && "2px solid dodgerBlue"}}  >
                                 <Box  display='flex' justifyContent='center' alignItems='center' >
                                     <img src={sprite.imgUrl} style={{maxWidth: '100%'}} />
                                 </Box>

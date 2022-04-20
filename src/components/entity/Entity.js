@@ -37,10 +37,11 @@ export default function Entity({entity}) {
 
               updateEntity(newEntity)
 
-              console.log(position)
+          
 
           }}
 
+          style={{position: 'fixed', zIndex: entity.zIndex}}
           
 
           onDragStop={(e, d) => {

@@ -34,7 +34,7 @@ export default function ImageEntity({entity, width, height}) {
             ) : null}
      
             <Paper elevation={entity.elevation} onClick={handleClick} sx={{ border: open ? "2px solid dodgerBlue" : null, borderRadius: `${entity.borderRadius}px`}}  height={height}  width={width} >
-                    <img height={height}   width={width} src={entity.imageUrl} style={{maxWidth: "100%", borderRadius: `${entity.borderRadius}px`}} />
+                    <img height={height}   width={width} src={entity.imageUrl} style={{maxWidth: "100%", maxHeight: "100%", borderRadius: `${entity.borderRadius}px`}} />
             </Paper>
             </Box>
         </ClickAwayListener>

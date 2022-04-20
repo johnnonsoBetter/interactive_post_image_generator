@@ -1,7 +1,5 @@
-import { AddRounded } from '@mui/icons-material'
-import { Box, Button, Typography} from '@mui/material'
+import { Box, Typography} from '@mui/material'
 import React, {useContext} from 'react'
-import PaletteList from './PaletteList'
 import PostDesignContext from '../context/PostDesignContext'
 import SpriteList from './sprites/SpriteList'
 

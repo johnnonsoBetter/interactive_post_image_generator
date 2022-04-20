@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from "@mui/material";
+import { Drawer, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import {createTheme, ThemeProvider} from '@mui/material'
@@ -26,6 +26,7 @@ function App() {
 
   const [palettes, setPalettes] = useState([])
   const [currentSpriteId, setCurrentSpriteId] = useState(sprites[0].id)
+  const [open, setOpen] = useState(false)
   
 
 
@@ -43,6 +44,8 @@ function App() {
         value={{
           palettes,
           sprites,
+          open, 
+          setOpen: () => setOpen(!open),
           createPalette,
           currentSpriteId,
           setCurrentSpriteId: (spriteid) => setCurrentSpriteId(spriteid)
@@ -73,6 +76,13 @@ function App() {
           </Grid>
 
         </Grid>
+          <Drawer
+            anchor='left'
+            open={open}
+            onClose={() => setOpen(false)}
+          >
+            <SideBar sprites={sprites} />
+          </Drawer>
       </PostDesignContextProvider>      
       </ThemeProvider> 
     </div>

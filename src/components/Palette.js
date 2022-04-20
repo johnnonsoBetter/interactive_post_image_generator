@@ -1,7 +1,7 @@
 
-import React, { useRef, useState } from 'react'
-import { AddPhotoAlternateRounded, CloudDownloadOutlined, DesignServicesRounded, RectangleRounded, TextIncreaseRounded, WidgetsRounded } from '@mui/icons-material'
-import { Button, Container, IconButton, Paper, Tooltip, Zoom } from '@mui/material'
+import React, { useContext, useRef, useState } from 'react'
+import { AddPhotoAlternateRounded, CloudDownloadOutlined, MenuRounded, DesignServicesRounded, RectangleRounded, TextIncreaseRounded, WidgetsRounded } from '@mui/icons-material'
+import { IconButton, Paper, Tooltip, Zoom } from '@mui/material'
 import { Box } from '@mui/system'
 import { v4 as uuidv4 } from 'uuid';
 import { saveAs } from 'file-saver'
@@ -10,6 +10,7 @@ import { ChromePicker } from 'react-color';
 import Entity from './entity/Entity';
 import { PaletteContextProvider } from '../context/PaletteContext';
 import html2canvas from 'html2canvas';
+import PostDesignContext from '../context/PostDesignContext';
 
 
 
@@ -17,7 +18,7 @@ export default function Palette() {
 
     const [entities, setEntities] = useState([])
     const [backgroundColor, setBackgroundColor] = useState('#fff')
-    const [image, setImage] = useState(null)
+    const {setOpen} = useContext(PostDesignContext)
     
     const fileRef = useRef(null)
    
@@ -25,8 +26,6 @@ export default function Palette() {
 
         e.preventDefault()
         const newImage = e.target.files[0]
-        setImage(newImage)
-
 
         addEntity('img', URL.createObjectURL(newImage))
         
@@ -59,8 +58,8 @@ export default function Palette() {
         if(type === 'img')
           setEntities(entities.concat({
             id:  uuidv4(),
-            x: 150,
-            y: 205,
+            x: 15,
+            y: 20,
             defaultWidth: 220,
             defaultHeight: 220,
             height: 150,
@@ -71,12 +70,13 @@ export default function Palette() {
             borderColor: '',
             borderSize: '',
             imageUrl,
+            zIndex: 7,
         }))
         else if(type === 'rect')
           setEntities(entities.concat({
             id:  uuidv4(),
-            x: 150,
-            y: 205,
+            x: 15,
+            y: 20,
             defaultWidth: 220,
             defaultHeight: 220,
             height: 220,
@@ -86,24 +86,26 @@ export default function Palette() {
             borderRadius: 0,
             borderColor: '',
             borderSize: '',
-            backgroundColor: '#222d39'
+            backgroundColor: '#222d39',
+            zIndex: 7
         }))
         else if(type === 'text')
           setEntities(entities.concat({
             id:  uuidv4(),
-            x: 150,
-            y: 205,
-            defaultWidth: 120,
-            defaultHeight: 30,
-            height: 70,
-            width: 170,
+            x: 15,
+            y: 20,
+            defaultWidth: 250,
+            defaultHeight: 100,
+            height: 100,
+            width: 250,
             type: 'text',
             backgroundColor: 'grey',
-            fontSize: 24,
+            fontSize: 32,
             fontWeight: 'normal',
             textAlign: 'left',
             fontFamily: 'Montserrat',
-            color: '#222d39'
+            color: '#222d39',
+            zIndex: 7
         }))
        
     }
@@ -138,14 +140,18 @@ export default function Palette() {
             <Box height="100%"  display='flex' justifyContent='center' alignItems='center' width='90%' position='relative'  >
              
                 
-                    <Box height="100%"  sx={{position: 'absolute', top: 0, right: '-7%' }}  display='flex' flexDirection='column'  >
+                    <Box height="100%"  sx={{position: 'absolute', top: 0, right: {xs: '-12%', sm: '-10%', md: '-7%'}}}  display='flex' flexDirection='column'  >
+
+
+                      <IconButton sx={{display: {xs: '', sm: '', md: 'none'}}} onClick={setOpen} >
+                            <MenuRounded />
+                        </IconButton>
+
 
                         <ColorPicker  backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor}/>
 
-{/*                     
-                        <Button size='small'  onClick={generateScreenShot} endIcon={<CloudDownloadOutlined /> } sx={{height: 25, width: 20, mr: 1}} variant='contained' >
-                          Export 
-                        </Button> */}
+                        
+                      
                         <Tooltip title='Text'  >
                             <IconButton onClick={() => addEntity('text')} >
                                 <TextIncreaseRounded />
@@ -174,7 +180,7 @@ export default function Palette() {
                         </Tooltip>
 
                         <Tooltip title='Export Image'  >
-                            <IconButton onClick={generateScreenShot} >
+                            <IconButton disabled={entities.length === 0} onClick={generateScreenShot} >
                               <CloudDownloadOutlined />
                             </IconButton>
 
@@ -201,8 +207,8 @@ export default function Palette() {
                         }
                          <Entity entity={ {
                               id:  uuidv4(),
-                              x: 15,
-                              y: 20,
+                              x: 1,
+                              y: 200,
                               height: 'auto',
                               width: 'auto',
                               type: 'sprite',
