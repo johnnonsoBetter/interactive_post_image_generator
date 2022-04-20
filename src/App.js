@@ -9,7 +9,8 @@ import Palette from "./components/Palette";
 import SideBar from "./components/SideBar";
 import { PostDesignContextProvider } from "./context/PostDesignContext";
 import {PaletteEntity} from './utilities/entityObject'
-import { v4 as uuidv4 } from 'uuid';
+
+import { sprites } from './utilities/spriteDb';
 
 
 const theme = createTheme({
@@ -20,17 +21,6 @@ const theme = createTheme({
   },
 });
 
-
-const sprites = [
-  {
-    id: uuidv4(),
-    imgUrl: 'https://res.cloudinary.com/dn6vnxbnm/image/upload/c_fit,q_100,w_200/v1650440985/sprites/cartoon-smiling-female-teacher-with-pointer-vector-14071505-removebg-preview_fefxlw.png'
-  },
-  {
-    id: uuidv4(),
-    imgUrl: 'https://res.cloudinary.com/dn6vnxbnm/image/upload/c_fit,q_100,w_200/v1650440198/sprites/cute-teacher-cartoon-holding-a-pointer-vector-11141472-removebg-preview_g80hhq.png'
-  },
-]
 
 function App() {
 
@@ -59,10 +49,11 @@ function App() {
         }}
       
       >
+        
         <Grid  container>
           <Grid item xs={12} sm={12} md={9} >
             
-            <Box height="calc(100vh)" display='flex' alignItems='center' width='100%' >
+            <Box height="calc(100vh - 20px)" display='flex' alignItems='center' width='100%' >
               
               {
                 palettes.length === 0 ?

@@ -40,3 +40,7 @@ export default function ImageEntity({entity, width, height}) {
         </ClickAwayListener>
     )
 }
+
+
+
+

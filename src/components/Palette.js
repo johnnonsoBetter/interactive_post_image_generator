@@ -1,15 +1,15 @@
+
 import React, { useRef, useState } from 'react'
 import { AddPhotoAlternateRounded, CloudDownloadOutlined, DesignServicesRounded, RectangleRounded, TextIncreaseRounded, WidgetsRounded } from '@mui/icons-material'
 import { Button, Container, IconButton, Paper, Tooltip, Zoom } from '@mui/material'
 import { Box } from '@mui/system'
 import { v4 as uuidv4 } from 'uuid';
-
-import Avatar from '@mui/material/Avatar';
+import { saveAs } from 'file-saver'
 import Menu from '@mui/material/Menu';
 import { ChromePicker } from 'react-color';
 import Entity from './entity/Entity';
-import {ImageEntityObject, TextEntityObject, RectangleEntityObject} from '../utilities/entityObject'
 import { PaletteContextProvider } from '../context/PaletteContext';
+import html2canvas from 'html2canvas';
 
 
 
@@ -31,6 +31,27 @@ export default function Palette() {
         addEntity('img', URL.createObjectURL(newImage))
         
         
+    }
+
+    const generateScreenShot = () => {
+
+      const shotTarget = document.getElementById('palette')
+
+      html2canvas(shotTarget,
+       { allowTaint: true,
+            useCORS: true,
+            logging: false,
+            
+           }
+        ).then((canvas) => {
+        const base64image = canvas.toDataURL("image/png");
+        saveAs(base64image, 'images.png')
+        
+
+        
+      });
+
+
     }
 
     const addEntity = (type, imageUrl=null) => {
@@ -112,18 +133,19 @@ export default function Palette() {
           >
             <Zoom in={true} >
 
-            <Box height="80%"  width='100%'  >
+         
+
+            <Box height="100%"  display='flex' justifyContent='center' alignItems='center' width='90%' position='relative'  >
              
-                <Container maxWidth="lg"  >
-                    <Box display='flex' justifyContent='space-between' >
+                
+                    <Box height="100%"  sx={{position: 'absolute', top: 0, right: '-7%' }}  display='flex' flexDirection='column'  >
 
-                    <ColorPicker  backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor}/>
+                        <ColorPicker  backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor}/>
 
-                    <Box display='flex' alignItems='center' justifyContent='space-around' my={1} >
-
-                        <Button size='small' endIcon={<CloudDownloadOutlined /> } sx={{height: 25, mr: 1}} variant='contained' >
+{/*                     
+                        <Button size='small'  onClick={generateScreenShot} endIcon={<CloudDownloadOutlined /> } sx={{height: 25, width: 20, mr: 1}} variant='contained' >
                           Export 
-                        </Button>
+                        </Button> */}
                         <Tooltip title='Text'  >
                             <IconButton onClick={() => addEntity('text')} >
                                 <TextIncreaseRounded />
@@ -150,19 +172,24 @@ export default function Palette() {
                             </IconButton>
 
                         </Tooltip>
+
+                        <Tooltip title='Export Image'  >
+                            <IconButton onClick={generateScreenShot} >
+                              <CloudDownloadOutlined />
+                            </IconButton>
+
+                        </Tooltip>
                         <input onChange={uploadImage} type='file' style={{display: 'none'}} accept='image/*' ref={fileRef} id="file" name="file" />
 
 
 
-                    </Box>
-
 
                     </Box>
-                    
-                </Container>
-               
-                <Container maxWidth="lg" sx={{height: "100%"}}  >
-                    <Paper elevation={4} sx={{height: "100%", backgroundColor,}} >
+             
+                
+                
+                    <Paper id='palette'  elevation={4} sx={{height: "100%", width: '100%', borderRadius: '0px', backgroundColor,}} >
+                   
                         {
                             entities.map((entity, index) => {
 
@@ -182,7 +209,6 @@ export default function Palette() {
                             
                           }}  />
                     </Paper>
-                </Container>
 
             </Box>
             </Zoom>
@@ -212,7 +238,7 @@ function ColorPicker({backgroundColor, setBackgroundColor}) {
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip title='background color' >
             <IconButton size='small' onClick={handleClick} >
-                <DesignServicesRounded fontSize='16px' />
+                <DesignServicesRounded />
             </IconButton>
         </Tooltip>
       </Box>
@@ -255,6 +281,5 @@ function ColorPicker({backgroundColor, setBackgroundColor}) {
     </React.Fragment>
   );
 }
-
 
 
