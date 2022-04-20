@@ -1,45 +1,25 @@
-import { AddPhotoAlternateRounded, AddRounded, FolderZipRounded, TextIncreaseRounded } from '@mui/icons-material'
-import { BottomNavigation, Box, Button, IconButton, Paper, Tooltip } from '@mui/material'
-import React from 'react'
+import { AddRounded } from '@mui/icons-material'
+import { Box, Button, Typography} from '@mui/material'
+import React, {useContext} from 'react'
+import PaletteList from './PaletteList'
+import PostDesignContext from '../context/PostDesignContext'
+import SpriteList from './sprites/SpriteList'
 
 
-export default function SideBar() {
+export default function SideBar({sprites}) {
+
+    const {createPalette} = useContext(PostDesignContext)
 
 
     return (
-        <Box px={1}>
-            <Box display='flex' justifyContent='space-around' >
-              
-                <Tooltip title='Add Text' >
-                    <IconButton >
-                        <TextIncreaseRounded />
-                    </IconButton>
+        <Box px={1} my={1}>
+            
+            <Typography variant='body1' py={1} color="initial">Select Sprites</Typography>
+            <Box  >
 
-                </Tooltip>
-
-                <Tooltip title='Add Image' >
-                    <IconButton >
-                        <AddPhotoAlternateRounded />
-                    </IconButton>
-
-                </Tooltip>
-
-               
+                <SpriteList />
             </Box>
-            <Button sx={{backgroundColor: 'dodgerblue'}} disableElevation variant='contained' startIcon={<AddRounded />} fullWidth size='small' > New Design</Button>
 
-
-            <Paper   sx={{ position: 'fixed', px: 1, zIndex: 500, height: 50, width: 280, bottom: 0,right: 0}} elevation={3}>
-                <BottomNavigation
-                showLabels
-            
-               
-                >
-                    <Button  sx={{backgroundColor: 'dodgerblue'}} disableElevation variant='contained' startIcon={<FolderZipRounded />} fullWidth size='small' > Generate Images</Button>
-
-            
-                </BottomNavigation>
-            </Paper>
 
         </Box>
     )
