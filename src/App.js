@@ -45,7 +45,7 @@ function App() {
           palettes,
           sprites,
           open, 
-          setOpen: () => setOpen(!open),
+          setOpen: (o) => setOpen(o),
           createPalette,
           currentSpriteId,
           setCurrentSpriteId: (spriteid) => setCurrentSpriteId(spriteid)

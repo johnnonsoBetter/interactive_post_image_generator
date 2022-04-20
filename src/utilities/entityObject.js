@@ -6,9 +6,6 @@ let PaletteEntity = {
 }
 
 
-let getGeneratedUniqueId = (type) =>  `${Date.now()}${type}${Math.floor(Math.random() * 222100)}`
-
-
 
 let ImageEntityObject = {
     id:  uuidv4(),

@@ -21,7 +21,7 @@ export default function SpriteList() {
                         <ListItem key={sprite.id + index} >
                             <ButtonBase onClick={()=> {
                                 setCurrentSpriteId(sprite.id)
-                                setOpen()
+                                setOpen(false)
                             }} sx={{p: 1, borderRadius: "10px", border: currentSpriteId === sprite.id && "2px solid dodgerBlue"}}  >
                                 <Box  display='flex' justifyContent='center' alignItems='center' >
                                     <img src={sprite.imgUrl} style={{maxWidth: '100%'}} />
