@@ -1,5 +1,5 @@
 # EngagingImageGenerator
-This is an application that helps users to seamlessly create and generate engaging images in a fun and creative way  [engaging-image-generator](https://engaging-post-image-generator.herokuapp.com/)
+This is an application that helps users to seamlessly create and generate engaging images in a fun and creative way  [engaging-image-generator](https://engaging-post-image-creator.herokuapp.com/)
 
 ![alt text](https://res.cloudinary.com/dn6vnxbnm/image/upload/v1650493539/engaging/enghome_soutwt.png)
 
